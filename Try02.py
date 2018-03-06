@@ -94,6 +94,7 @@ if __name__ == '__main__':
         messagefile=findfile('message',os.path.splitext(i)[0])
         for j in messagefile:
             message.append(j)
+	#判断是否保留解压包并做相应操作
     if hold == 'no':
 		delete_unzip(filel)
 	else :
