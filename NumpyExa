@@ -1,0 +1,116 @@
+#_*_coding:gbk_*_
+import numpy as np
+
+
+
+print '(2)输出numpy版本信息'
+print np.__version__
+print 
+
+
+print '(3)#创建零向量'
+z= np.zeros((2,3))
+print z
+print
+
+
+print '(4)将上面的零向量的第二行第三列元素置为1'
+z[1,2]=1
+print z
+print
+
+
+
+print '(5)arange函数，创建一个在给定范围的向量'
+a = np.arange(1,101)
+print a 
+print
+
+
+print '(6)reshape函数，将arrray变形为矩阵'
+
+a =a.reshape(25,4)
+print a
+print 
+
+
+print '(7)nonzero函数,寻找非零元素的下标'
+nz = np.nonzero([0,2,0,4,0,1])
+print nz
+print
+
+
+
+
+print '(8)eye函 数, 生成单位向量'
+z = np.eye(3)
+print z
+print
+
+
+
+print '(9)diag函数，diagonal对角线'
+z = np.diag([1,2,3,4],k=0)   #k=0,以[1,2,3,4]为对角线
+print z
+print
+
+z=np.diag([1,2,3,4],k=1)   #k=1,在对角线上一行
+print z
+print
+
+
+z=np.diag([1,2,3,4],k=-1)   #k=1,在对角线下一行
+print z
+print
+
+
+
+
+print 'random模块的random函 数，生成随机数'
+z= np.random.random((3,3))
+print z
+print 
+
+print '二、入门级10道'
+
+print '（1）创建一个8*8的‘棋盘’矩阵'
+z = np.zeros((8,8),dtype = int)
+z[1::2,::2]=1  #1,3,5,7行0,2,4,6列的值为1
+print z
+print 
+z[::2,1::2]=1  #0,2,4,6行1,3,5,7列的值为1
+print z
+print
+
+
+print '（2）min()、max()函 数'
+z = np.random.random((10,10))
+zmin,zmax = z.min(),z.max()
+print zmin
+print zmax
+print
+
+
+
+print '（3）函数tile(A,reps),reps即重复的次数，不仅可以是数字，还可以是array。比如构造棋盘矩阵'
+z = np.tile(np.array([[0,1],[0,1]]),(4,4))  #(4,4)中第一个为行重复，第二个为列重复
+print z
+print
+z = np.tile(np.array([[0,1],[0,1]]),(3,4))
+print z
+print
+
+print '(4)归一化，将矩阵规格化到0～1，即最小的变成0，最大的变成1，最小与最大之间的等比缩放。'
+z = np.random.random((5,5))
+zmax,zmin =z.max(),z.min()
+z = (z-zmin)/(zmax-zmin)
+print z
+print
+
+print '矩阵点成'
+z=np.dot(np.ones((5,3)),np.ones((3,2)))
+print z
+print 
+
+
+
